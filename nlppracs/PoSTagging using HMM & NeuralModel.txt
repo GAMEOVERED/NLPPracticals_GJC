@@ -1,0 +1,30 @@
+#Importing Libraries
+import nltk
+import numpy as np
+import pandas as pd
+import random
+from sklearn.model_selection import train_test_split
+import pprint, time
+#Download the treebank corpus from nltk
+nltk.download(&#39;treebank&#39;)
+#Download the universal tagset from nltk
+nltk.download(&#39;universal_tagset&#39;)
+#Reading the Treebank tagged sentences
+nltk_data = list(nltk.corpus.treebank.tagged_sents(tagset=&#39;universal&#39;))
+#print the first two sentences along with tags
+print(nltk_data[:2])
+
+------------------------------------
+
+
+import nltk
+nltk.download(&#39;treebank&#39;)
+nltk.download(&#39;brown&#39;)
+nltk.download(&#39;conll2000&#39;)
+#Load POS tagged corpora from NLTK
+treebank_corpus = nltk.corpus.treebank.tagged_sents(tagset=&#39;universal&#39;)
+brown_corpus = nltk.corpus.brown.tagged_sents(tagset=&#39;universal&#39;)
+conll_corpus = nltk.corpus.conll2000.tagged_sents(tagset=&#39;universal&#39;)
+#Merging the dataframes to create a master df
+tagged_sentences = treebank_corpus + brown_corpus + conll_corpus
+print(tagged_sentences)

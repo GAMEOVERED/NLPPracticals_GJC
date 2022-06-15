@@ -1,0 +1,21 @@
+#Import required libraries
+import nltk
+nltk.download(&#39;punkt&#39;)
+nltk.download(&#39;averaged_perceptron_tagger&#39;)
+from nltk import pos_tag, word_tokenize, RegexpParser
+#Example Text
+sample_text = &quot;The little yellow dog barked at the cat&quot;
+#Find all parts of speech from any text
+tagged = pos_tag(word_tokenize(sample_text))
+#Extract all parts pof speech from any text
+chunker = RegexpParser(&quot;&quot;&quot;
+NP:{&lt;DT&gt;?&lt;JJ&gt;*&lt;NN&gt;} #To
+P:{&lt;IN&gt;}
+V:{&lt;V.*&gt;}
+PP:{&lt;P&gt; &lt;NP&gt;}
+VP:{&lt;V&gt; &lt;NP|PP&gt;*}
+&quot;&quot;&quot;)
+#Print all parts of speech in above sentence
+output = chunker.parse(tagged)
+print(&quot;After Extracting\n&quot;, output)
+output.draw()

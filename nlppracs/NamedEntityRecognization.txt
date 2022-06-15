@@ -1,0 +1,9 @@
+import spacy
+from spacy import displacy
+NER = spacy.load(&quot;en_core_web_sm&quot;)
+raw_text = &quot;Bal Gangadhar Tilak  was born on 23 July 1856 in Ratnagiri dis
+trict, was an Indian nationalist, philosopher, social reformer, and the fi
+rst popular leader of the Indian Independence Movement&quot;
+text1 = NER(raw_text)
+for word in text1.ents:
+    print(word.text, word.label_)

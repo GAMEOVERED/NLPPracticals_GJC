@@ -1,0 +1,18 @@
+from nltk.tokenize import sent_tokenize
+file1=open(&#39;sents.txt&#39;,&#39;r&#39;)
+s=file1.read()
+print(sent_tokenize(s))
+from nltk.tokenize import word_tokenize
+file1=open(&#39;sents.txt&#39;,&#39;r&#39;)
+s=file1.read()
+print(word_tokenize(s))
+
+------------------
+
+
+from nltk.tokenize import sent_tokenize
+s=input(&quot;enter sentence:&quot;)
+print(sent_tokenize(s))
+from nltk.tokenize import word_tokenize
+s=input(&quot;enter sentence:&quot;)
+print(word_tokenize(s))

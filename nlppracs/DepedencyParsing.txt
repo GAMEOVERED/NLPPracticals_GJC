@@ -1,0 +1,20 @@
+import spacy
+from spacy import displacy
+#Load the language model.
+nlp = spacy.load(&quot;en_core_web_sm&quot;)
+sentence = &#39;Each day provides its own gifts&#39;
+
+#nlp function returns an object with individual token information,
+#Linguistic features and relationships
+doc = nlp(sentence)
+
+print(&quot;{:&lt;15} | {:&lt;8} | {:&lt;15} | {:&lt;20}&quot;.format(&#39;Token&#39;,&#39;Relation&#39;,&#39;Head&#39;,&#39;Children&#39;))
+print(&quot;-&quot; * 70)
+
+for token in doc:
+#print the token, dependency nature, head and all dependents of the token
+print(&quot;{:&lt;15} | {:&lt;8} | {:&lt;15} | {:&lt;20}&quot;.format(str(token.text), str(token.dep_),
+str(token.head.text), str([child for child in token.children])))
+
+#Use displacy to visualize the dependency
+displacy.render(doc, style=&#39;dep&#39;, jupyter=True, options={&#39;distance&#39;:120})

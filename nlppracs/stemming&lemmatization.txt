@@ -1,0 +1,21 @@
+from nltk.stem import PortStemmer
+from nltk.stem import LancasterStemmer
+# Create an object of class PortStemmer
+porter = PortStemmer()
+lancaster=LancasterStemmer()
+# Provide a word to be stemmed
+print(&quot;Porter Stemmer&quot;)
+print(porter.stem(&quot;cats&quot;))
+print(porter.stem(&quot;trouble&quot;))
+print(porter.stem(&quot;troubling&quot;))
+print(porter.stem(&quot;troubled&quot;))
+print(&quot;Lancaster Stemmer&quot;)
+print(lancaster.stem(&quot;cats&quot;))
+print(lancaster.stem(&quot;trouble&quot;))
+print(lancaster.stem(&quot;troubling&quot;))
+print(lancaster.stem(&quot;troubled&quot;))
+
+
+----------------------------
+
+
